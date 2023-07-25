@@ -19,7 +19,7 @@ public class Email {
     }
 
     public void changePassword(String oldPassword, String newPassword){
-        if(oldPassword.equals(password)){
+        if(oldPassword.equals(this.password)){
             if(isValid(newPassword)){
                 System.out.println("Password changed successfully");
                 this.password=newPassword;
@@ -33,29 +33,29 @@ public class Email {
         }
     }
     public boolean isValid(String newPassword){
-        boolean capital=false;
-        boolean small=false;
-        boolean digit=false;
-        boolean special=false;
+        int capital=0;
+        int small=0;
+        int digit=0;
+        int special=0;
         if(newPassword.length()<8){
             return false;
         }
         for(int i=0;i<newPassword.length();i++){
             char ch=newPassword.charAt(i);
             if((ch >= 'A')&& (ch <= 'Z')){
-                capital=true;
+                capital++;
             }
-            else if((ch >= 'a')&& (ch <= 'z')){
-                small=true;
+            else if(ch >= 'a' && ch <= 'z'){
+                small++;
             }
-            else if ((ch >='0') && (ch <= '9')) {
-                digit=true;
+            else if (ch >='0' && ch <= '9') {
+                digit++;
             }
             else{
-                special=false;
+                special++;
             }
         }
-        if(capital && small && digit && special==true){
+        if(capital !=0 && small !=0 && digit !=0 && special !=0){
             return true;
         }
         return false;

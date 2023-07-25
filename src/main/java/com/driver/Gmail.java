@@ -34,7 +34,8 @@ public class Gmail extends Email {
     public Gmail(String emailId) {
         super(emailId);
         this.inboxCapacity=Integer.MAX_VALUE;
-
+        this.inbox=new ArrayList<>();
+        this.trash=new ArrayList<>();
     }
 
     public void receiveMail(Date date, String sender, String message){

@@ -39,10 +39,10 @@ public class Email {
         }
     }
     public boolean isValid(String newPassword){
-        Boolean capital=false;
-        Boolean small=false;
-        Boolean digit=false;
-        Boolean special=false;
+        boolean capital=false;
+        boolean small=false;
+        boolean digit=false;
+        boolean special=false;
         if(newPassword.length()<8){
             return false;
         }
